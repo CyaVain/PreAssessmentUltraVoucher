@@ -1,0 +1,18 @@
+//Melakukan insert data parent terlebih dahulu
+
+INSERT INTO parents (`id`, `name`)
+values (2, "Ilham"), (3, "Irwan")
+
+
+//Insert data Members (Sesuai Soal)
+INSERT INTO members
+(`id`,
+`name`,
+`parent_id`)
+VALUES
+(1, "Zaki", 2),(2, "Ilham", null), (3, "Irwan", 2), (4, "Arka", 3);
+
+//Menampilkan hasil data agar sesuai dengan soal
+SELECT m.id , m.name, p.name AS "parent_name"
+FROM members m
+LEFT JOIN parents p ON m.parent_id = p.id

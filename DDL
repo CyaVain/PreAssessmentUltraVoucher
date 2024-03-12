@@ -1,0 +1,17 @@
+//Membuat table parent untuk menampung data member yang merupakan parent
+
+CREATE TABLE `parents` (
+  `id` int NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `members` (
+  `id` int NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `parent_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `parent_idx` (`parent_id`),
+  CONSTRAINT `parent` FOREIGN KEY (`parent_id`) REFERENCES `parents` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+

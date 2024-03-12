@@ -1,4 +1,4 @@
-package pre.assesment.ultraVoucher;
+package assesment.ultraVoucher;
 
 public class LogicTest {
 
